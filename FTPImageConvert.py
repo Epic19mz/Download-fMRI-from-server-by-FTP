@@ -68,7 +68,7 @@ def main(arguments):
 		ftp.retrlines('NLST',callback=files.append)
 		n=len(files)-len(downloaded)
 		if n > 0 :
-			newfiles=files[-n:-1]
+			newfiles=files[-n:]
 			download(ftp,newfiles,Path)
 			print("Download %d files",n)
 		else :
